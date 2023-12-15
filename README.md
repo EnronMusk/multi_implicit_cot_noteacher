@@ -1,4 +1,6 @@
-**Model demo** notebook is stored with instructions and visuals: [here](https://github.com/EnronMusk/multi_implicit_cot/blob/main/demo/model_demo.ipynb)
+This repo is a extentsion of the original work: [here](https://github.com/EnronMusk/multi_implicit_cot)
+
+**Model demo** notebook is stored with instructions and visuals: [here](https://github.com/EnronMusk/multi_implicit_cot_noteacher/blob/main/demo/model_demo.ipynb)
 
 Simply run the notebook to explore results. The notebook does request user input for a custom prediction, but otherwise its fully automated.
 
@@ -15,7 +17,7 @@ Example entry:
 ```
 Each multiplication is delimited by `$`. The `1 7 * 1 3` corresponds to `31 * 71` and `1 7 0 + 0 3 1 2` corresponds to `2130 + 71` and `1 0 2 2 ` corresponds to `2201`
 
-Dataset is dynamically generated and saved: [here](https://github.com/EnronMusk/multi_implicit_cot/tree/main/data)
+Dataset is dynamically generated and saved: [here](https://github.com/EnronMusk/multi_implicit_cot_noteacher/tree/main/data)
 
 Referenced paper: [here](https://arxiv.org/pdf/2311.01460.pdf)
 
