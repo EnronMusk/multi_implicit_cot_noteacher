@@ -67,10 +67,18 @@ class ImplicitStudent():
             labels_nocot = batch['labels_nocot'].to(device)
             batch_size = input_ids_nocot.shape[0]
             with ctx:
-                emulated_teacher_states = self.thought(input_ids=input_ids_nocot)
-                outputs = self.mindread.computeLoss(input_ids=input_ids_nocot, labels=labels_nocot, teacher_states=emulated_teacher_states)
+                beam_output = self.mindread.generate(
+                    input_ids=input_ids_nocot,
+                    max_new_tokens=self.config.max_new_tokens,
+                )
+
+                beam_output = [inner_tensor.tolist()[0] for inner_tensor in beam_output]
+
+                beam_output = torch.tensor(beam_output, dtype=torch.long).to(device)
+                outputs = self.mindread.computeLoss(input_ids=beam_output, labels=labels_nocot)
                 loss = outputs.loss
                 token_accuracy = outputs.token_accuracy.item()
+
             total_loss += outputs.total_loss.item()
             total_correct_tokens += outputs.total_correct.item()
             total_tokens += outputs.total_tokens
@@ -80,7 +88,6 @@ class ImplicitStudent():
             with ctx:
                 beam_output = self.mindread.generate(
                     input_ids=input_ids_nocot,
-                    teacher_states=emulated_teacher_states,
                     max_new_tokens=self.config.max_new_tokens,
                 )
 
@@ -159,11 +166,20 @@ class ImplicitStudent():
         for batch in tqdm.tqdm(train_dataloader):
             input_ids_nocot = batch['input_ids_nocot'].to(device)
             labels_nocot = batch['labels_nocot'].to(device)
-
+            #print(labels_nocot)
             with ctx:
                 with torch.no_grad():
-                    emulated_teacher_states = self.thought(input_ids_nocot, requires_backward=True)
-                outputs = self.mindread.computeLoss(input_ids=input_ids_nocot, labels=labels_nocot, teacher_states=emulated_teacher_states)
+                    
+
+                    beam_output = self.mindread.generate(
+                        input_ids=input_ids_nocot,
+                        max_new_tokens=self.config.max_new_tokens,
+                    )
+
+                    beam_output = [inner_tensor.tolist()[0] for inner_tensor in beam_output]
+
+                beam_output = torch.tensor(beam_output, dtype=torch.long).to(device)
+                outputs = self.mindread.computeLoss(input_ids=beam_output, labels=labels_nocot)
             loss = outputs.loss
             token_accuracy = outputs.token_accuracy.item()
 
