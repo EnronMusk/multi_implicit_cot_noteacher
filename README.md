@@ -1,4 +1,5 @@
 This repo is a extentsion of the original work: [here](https://github.com/EnronMusk/multi_implicit_cot)
+The goal was to mimic the same implicit reasoning used by predicting teacher states by instead predicting the pure CoT and to implicity use it in the chain of reasoning.
 
 **Model demo** notebook is stored with instructions and visuals: [here](https://github.com/EnronMusk/multi_implicit_cot_noteacher/blob/main/demo/model_demo.ipynb)
 
