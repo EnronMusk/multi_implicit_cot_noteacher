@@ -1,6 +1,6 @@
 This repo is a extentsion of the original work: [here](https://github.com/EnronMusk/multi_implicit_cot)
 
-The idea was to answer the question: Can we use implicit reasoning without a teacher model? The goal was to mimic the same implicit reasoning used by predicting teacher states by instead predicting the pure CoT and to implicity use it in the chain of reasoning. This requires no teacher model, and trains much faster while producing similar results.
+The idea was to answer the question: _Can we use implicit reasoning without a teacher model?_ The goal was to mimic the same implicit reasoning used by predicting teacher states by instead predicting the pure CoT and to implicity use it in the chain of reasoning. This requires no teacher model, and trains much faster while producing similar results.
 
 **Model demo** notebook is stored with instructions and visuals: [here](https://github.com/EnronMusk/multi_implicit_cot_noteacher/blob/main/demo/model_demo.ipynb)
 
