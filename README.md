@@ -24,8 +24,15 @@ Dataset is dynamically generated and saved: [here](https://github.com/EnronMusk/
 Referenced paper: [here](https://arxiv.org/pdf/2311.01460.pdf)
 
 ## **Results** 
+Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset without teacher:
 
-Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset:
+|**Model** |**Loss** | **Test** | **Train**|
+|----------|----------|----------|----------|
+|ThoughtEmulator|Perplexitity: 1.000001| Test Accuracy 0.999987| Training Accuracy: 999999|
+|MindReadingEmulator|Perplexitity: 1.187181| Test Accuracy: 1.000000| Training Accuracy: 0.930523|
+|ImplicitStudent|Perplexitity: 1.001552| Test Accuracy: 0.996429| Training Accuracy: 0.999696|
+
+Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with teacher:
 
 |**Model** |**Loss** | **Test** | **Train**|
 |----------|----------|----------|----------|
