@@ -32,8 +32,7 @@ Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with
 |MindReadingEmulator|Perplexitity: 1.187181| Test Accuracy: 1.000000| Training Accuracy: 0.930523|
 |ImplicitStudent|Perplexitity: 1.001552| Test Accuracy: 0.996429| Training Accuracy: 0.999696|
 
-## **NOTE** 
-The training accuracy in the mind reading emulator is biased because the model had some slight issues with the context. Obviously it was accurate enough to extract the answer though so I left it as is.
+**NOTE** The training accuracy in the mind reading emulator is biased because the model had some slight issues with the context, and predicted extra 1 extra symbol. Obviously it was accurate enough to extract the answer though so I left it as is.
 
 Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with teacher:
 
