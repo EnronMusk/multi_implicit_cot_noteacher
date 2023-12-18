@@ -32,7 +32,7 @@ Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with
 |MindReadingEmulator|Perplexitity: 1.187181| Test Accuracy: 1.000000| Training Accuracy: 0.930523|
 |ImplicitStudent|Perplexitity: 1.001552| Test Accuracy: 0.996429| Training Accuracy: 0.999696|
 
-**NOTE** The training accuracy in the mind reading emulator is biased because the model had some slight issues with the context. Obviously it was accurate enough to extract the answer though so I left it as is.
+##**NOTE** The training accuracy in the mind reading emulator is biased because the model had some slight issues with the context. Obviously it was accurate enough to extract the answer though so I left it as is.
 
 Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with teacher:
 
@@ -42,9 +42,3 @@ Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with
 |ThoughtEmulator|Loss: 4.369609| Quasi Test Accuracy 0.977900| Quasi Training Accuracy: 0.977773|
 |MindReadingEmulator|Perplexitity: 1.000601| Test Accuracy: 0.996688| Training Accuracy: 0.999745|
 |ImplicitStudent|Perplexitity: 1.000000| Test Accuracy: 1.000000| Training Accuracy: 1.000000|
-
-## **Notes** 
-
-The implicit student model performed exceptionally well after being retrained on the train data and its accuracy statistics are accurate to 6 decimal places.
-
-The teacher model can have much better performance with higher eta (learning rate). I multipled eta by **8/5** and saw 0.999831 test accuracy and 0.999995 training, which are both significantly higher. This makes sense because our implicit student performed better than the teacher, when it was trained on the exact same data.
