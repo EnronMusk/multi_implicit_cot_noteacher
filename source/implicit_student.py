@@ -159,12 +159,12 @@ class ImplicitStudent():
         for batch in tqdm.tqdm(train_dataloader):
             input_ids_nocot = batch['input_ids_nocot'].to(device)
             labels_nocot = batch['labels_nocot'].to(device)
-            #print(labels_nocot)
+            print(labels_nocot)
             with ctx:
                 with torch.no_grad():
                     
 
-                    beam_output = self.mindread.generate(
+                    beam_output = self.thought.generate(
                         input_ids=input_ids_nocot,
                         max_new_tokens=self.config.max_new_tokens,
                     )
