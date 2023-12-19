@@ -84,13 +84,6 @@ class ImplicitStudent():
             total_tokens += outputs.total_tokens
             total_instances += batch_size
 
-            # Generate
-            with ctx:
-                beam_output = self.mindread.generate(
-                    input_ids=input_ids_nocot,
-                    max_new_tokens=self.config.max_new_tokens,
-                )
-
             # Evaluate
             sep_positions = get_sep_position(input_ids_nocot, self.tokenizer.eos_token_id)
             for i, (input_ids_i, beam_output_i) in enumerate(zip(input_ids_nocot, beam_output)):

@@ -11,7 +11,7 @@ class ThoughtEmulatorConfig(PretrainedConfig):
         batch_size = 32,
         eta = 5e-5,
         max_grad_norm = 1,
-        max_new_tokens = 17,
+        max_new_tokens = 128, #17
         epochs = 1,
         delta = 'dynamic', #Here we assign the dynamic delta paramter for variable length CoT
         subset = 'diagonal',
@@ -39,7 +39,7 @@ class MindReadingEmulatorConfig(PretrainedConfig):
         batch_size = 32,
         eta = 5e-5,
         max_grad_norm = 1,
-        max_new_tokens = 13,
+        max_new_tokens = 128, #13
         epochs = 1,
         delta = 'dynamic', #Here we assign the dynamic delta paramter for variable length CoT
         subset = 'diagonal',
