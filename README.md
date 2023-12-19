@@ -28,9 +28,9 @@ Used gpt-2 small (12 layers) and 777k training dataset and 77k test dataset with
 
 |**Model** |**Loss** | **Test** | **Train**|
 |----------|----------|----------|----------|
-|ThoughtEmulator|Perplexitity: 1.000001| Test Accuracy 0.999987| Training Accuracy: 999999|
-|MindReadingEmulator|Perplexitity: 1.187181| Test Accuracy: 1.000000| Training Accuracy: 0.930523|
-|ImplicitStudent|Perplexitity: 1.001552| Test Accuracy: 0.996429| Training Accuracy: 0.999696|
+|ThoughtEmulator|Perplexitity: 1.000000| Test Accuracy 1.000000| Training Accuracy: 1.000000|
+|MindReadingEmulator|Perplexitity: 1.187874| Test Accuracy: 1.000000| Training Accuracy: .930459|
+|ImplicitStudent|Perplexitity: 1.000026| Test Accuracy: 1.000000| Training Accuracy: 1.000000|
 
 **NOTE** The training accuracy in the mind reading emulator is biased because the model had some slight issues with the context, and predicted 1 extra symbol. Obviously it was accurate enough to extract the answer though so I left it as is.
 
