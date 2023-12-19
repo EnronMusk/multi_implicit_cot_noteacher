@@ -280,7 +280,7 @@ class MindReadingEmulator(nn.Module):
         accuracy, token_accuracy, ppl = self.evaluate(val_dataloader, ctx)
 
         print (f'\u2192 PPL: {ppl:.6f}; Test Accuracy: {accuracy:.6f}. Training Accuracy: {token_accuracy:.6f}.')
-        emulator.save_pretrained(os.path.join(train_handler.path+r'\models\thought_emulator'))
+        emulator.save_pretrained(os.path.join(train_handler.path+r'\models\mindreading_emulator'))
 
         createLossPlot(train_losses) #Plots the loss and accuracy information over batches, so we can gage training performance.
         createAccuracyPlot(train_accs)
